@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ProductList from '../components/ProductList';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,6 +17,7 @@ const Hero = () => {
   }, []);
 
   return (
+    <>
     <section className={`relative min-h-screen flex flex-col lg:flex-row bg-black lg:bg-none lg:bg-black overflow-hidden`}>
       {/* Dynamic background particles */}
       <div className="absolute inset-0 pointer-events-none">
@@ -149,7 +151,7 @@ const Hero = () => {
       </div>
       
       {/* Enhanced custom keyframes */}
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-10px); }
@@ -219,7 +221,17 @@ const Hero = () => {
           }
         }
       `}</style>
+
+      
     </section>
+    <section className="bg-black text-white text-center py-20">
+        <h1 className="text-5xl font-bold mb-4">Unleash Your Beast Mode</h1>
+        <p className="text-lg">Premium Gym Wear Just for You</p>
+      </section>
+
+      <ProductList title="🔥 Newly Launched" tag="new" />
+      <ProductList title="💸 Offer Zone" tag="offer" />
+    </>
   );
 };
 
